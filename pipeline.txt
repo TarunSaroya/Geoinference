@@ -1,0 +1,152 @@
+Current project status
+
+I'd mark us at:
+
+Milestone 1 — Foundation ✅
+Git repository                    ✅
+Project structure                 ✅
+Python 3.12                       ✅
+Virtual environment               ✅
+PyTorch + CUDA                    ✅
+RTX 4050 detected                 ✅
+OpenCV                            ✅
+EasyOCR                           ✅
+Image loading                     ✅
+Pipeline                          ✅
+Image metadata extraction         ✅
+OCR extraction                    ✅
+Milestone 2 — Evidence System ⏳
+
+Next:
+
+Raw extractor results
+        ↓
+Evidence objects
+        ↓
+Filtering
+        ↓
+Normalization
+        ↓
+Evidence store
+Milestone 3 — Visual Metas
+
+Then we'll start adding the really interesting stuff:
+
+Road markings
+Vehicles
+Traffic direction
+Signs
+Utility poles
+Architecture
+Vegetation
+Camera/coverage clues
+Milestone 4 — Geolocation
+Evidence
+   ↓
+Candidate generation
+   ↓
+Candidate scoring
+   ↓
+Top locations
+   ↓
+Confidence
+   ↓
+Explanation
+Milestone 5 — Web application
+
+Finally:
+
+                ┌──────────────┐
+Upload image →  │ Geoinference │
+                │    Backend   │
+                └──────┬───────┘
+                       ↓
+                 AI Pipeline
+                       ↓
+              ┌───────────────┐
+              │ Top candidates│
+              └───────┬───────┘
+                      ↓
+              Interactive Map
+
+
+
+
+                         IMAGE
+                           │
+             ┌─────────────┴──────────────┐
+             │                            │
+             ▼                            ▼
+      META EXTRACTION              VISUAL RETRIEVAL
+             │                            │
+       OCR / signs                 Global embedding
+       road markings               place recognition
+       vehicles                          │
+       architecture                      ▼
+             │                     Candidate locations
+             │                            │
+             └────────────┬───────────────┘
+                          ▼
+                  EVIDENCE / CANDIDATES
+                          │
+                          ▼
+                 LOCAL VERIFICATION
+                  feature matching
+                          │
+                          ▼
+                  GEOMETRIC CHECK
+                          │
+                          ▼
+                  SPATIAL CONSENSUS
+                          │
+                          ▼
+                    FINAL GPS
+                          │
+                          ▼
+                         MAP              
+
+
+
+
+
+                 GEOINFERENCE
+                      │
+                      ▼
+                 IMAGE INPUT
+                      │
+                      ▼
+              VISUAL ANALYSIS
+                      │
+       ┌──────────────┼───────────────┐
+       │              │               │
+       ▼              ▼               ▼
+    TEXT           OBJECTS         SCENE
+       │              │               │
+       ▼              ▼               ▼
+     OCR            YOLO          Vision Models
+       │              │               │
+       └──────────────┼───────────────┘
+                      ▼
+                 META ENGINE
+                      │
+       ┌──────────────┼──────────────┐
+       ▼              ▼              ▼
+     Roads         Terrain        Climate
+     Signs         Mountains      Vegetation
+     Vehicles      Shadows        Architecture
+       │              │              │
+       └──────────────┼──────────────┘
+                      ▼
+                GEO EVIDENCE
+                      │
+                      ▼
+              REASONING ENGINE
+                      │
+                      ▼
+             CANDIDATE LOCATIONS
+                      │
+                      ▼
+                 GPS ESTIMATE
+                      │
+                      ▼
+                      MAP                         
