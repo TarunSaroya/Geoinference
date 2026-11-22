@@ -25,6 +25,8 @@ class OCRExtractor(BaseExtractor):
                     "text": text,
                     "confidence": float(confidence),
                     "bounding_box": bounding_box,
+                    "image_width": image.width,
+                    "image_height": image.height,
                 }
             )
 

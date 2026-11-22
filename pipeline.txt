@@ -150,3 +150,10 @@ Upload image →  │ Geoinference │
                       │
                       ▼
                       MAP                         
+
+
+
+
+cmd : 
+cd /d D:\projects\Geoinference
+.venv\Scripts\activate
