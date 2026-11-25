@@ -157,3 +157,11 @@ Upload image →  │ Geoinference │
 cmd : 
 cd /d D:\projects\Geoinference
 .venv\Scripts\activate
+
+
+
+File	                        Planned work
+src/datasets/mapillary.py	Automatic retries, backoff and HTTP diagnostics
+scripts/acquire_dataset.py	Larger sampling coverage and dataset split support
+scripts/analyze_benchmark.py	Automated per-image failure analysis
+tests/test_mapillary.py 	Acquisition unit tests 
