@@ -36,6 +36,10 @@ models/
 data/raw/
 data/processed/
 data/retrieval/
+data/evaluation/images/
+
+# Generated Reports
+reports/benchmarks/
 
 # Jupyter
 .ipynb_checkpoints/
